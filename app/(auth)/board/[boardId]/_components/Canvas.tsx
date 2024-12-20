@@ -107,6 +107,11 @@ export default function Canvas( { boardId } : CanvasProps ) {
     }
   }, []);
 
+  const selectAllLayers = useMutation(({ storage, setMyPresence }) => {
+    const layerIds = storage.get("layerIds").toArray();
+    setMyPresence({ selection: layerIds })
+  }, [layerIds])
+
   const updateSelectionNet = useMutation(({ storage, setMyPresence }, current: Point, origin: Point) => {
     const layers = storage.get("layers").toImmutable();
     setCanvasState({
@@ -336,21 +341,36 @@ export default function Canvas( { boardId } : CanvasProps ) {
     function onKeyDown(e: KeyboardEvent) {
       switch (e.key) {
         case "a": {
-          
+          if (e.ctrlKey || e.metaKey){
+            e.preventDefault();
+            selectAllLayers();
+            break;
+          }
+          break;
         } 
-        case "Delete": {
-          deleteLayers();
+        case "t": {
+          setCanvasState({ mode: CanvasMode.Inserting, layerType: LayerType.Text });
+        }
+        case "y": {
+          if (e.ctrlKey || e.metaKey) {
+            history.redo();
+            break;
+          }
           break;
         }
         case "z": {
           if (e.ctrlKey || e.metaKey) {
-            if (e.shiftKey) {
-              history.redo();
-            } else {
-              history.undo();
-            }
+            history.undo();
             break;
           }
+          break;
+        }
+        case "Delete": {
+          deleteLayers();
+          break;
+        }
+        default: {
+          break;
         }
       }
     }

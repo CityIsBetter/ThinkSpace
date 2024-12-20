@@ -44,7 +44,7 @@ export const Toolbar = ({
           }
         />
         <ToolButton
-          label="Text"
+          label="Text (T)"
           icon={Type}
           onClick={() =>
             setCanvasState({
@@ -112,13 +112,13 @@ export const Toolbar = ({
       </div>
       <div className="bg-white rounded-md p-1.5 flex flex-col items-center shadow-md">
         <ToolButton
-          label="Undo"
+          label="Undo (ctrl + z)"
           icon={Undo2}
           onClick={undo}
           disabled={!canUndo}
         />
         <ToolButton
-          label="Redo"
+          label="Redo (ctrl + y)"
           icon={Redo2}
           onClick={redo}
           disabled={!canRedo}
