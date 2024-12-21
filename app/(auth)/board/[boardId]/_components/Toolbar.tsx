@@ -1,6 +1,7 @@
 import { CanvasMode, CanvasState, LayerType } from "@/types/canvas";
 import {
   Circle,
+  HandIcon,
   MousePointer2,
   Pencil,
   Redo2,

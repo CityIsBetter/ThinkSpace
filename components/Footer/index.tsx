@@ -19,24 +19,23 @@ const footerSections: FooterSection[] = [
     title: 'Product',
     links: [
       { label: 'Home', href: '/' },
-      { label: 'Features', href: '/#features' },
+      { label: 'Features', href: '/features' },
       { label: 'About', href: '/about' },
     ],
   },
   {
     title: 'Dev',
     links: [
-      { label: 'Contact', href: '/contact' },
-      { label: 'GitHub', href: 'https://github.com/yourusername/boardscape' },
-      { label: 'Documentation', href: '/docs' },
+      { label: 'Contact', href: 'mailto:mahesh.paul.j@gmail.com' },
+      { label: 'GitHub', href: 'https://github.com/CityIsBetter' },
     ],
   },
 ];
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com/yourusername' },
-  { icon: Twitter, href: 'https://twitter.com/yourusername' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/yourusername' },
+  { icon: Github, href: 'https://github.com/CityIsBetter' },
+  { icon: Twitter, href: 'https://twitter.com/CityIsBetter_' },
+  { icon: Linkedin, href: 'https://linkedin.com/in/mahesh-paul' },
 ];
 
 const Footer = () => {

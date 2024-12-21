@@ -10,7 +10,6 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Authenticated } from 'convex/react';
 import { SignInButton, useAuth, UserButton } from '@clerk/nextjs';
 
 interface NavLink {
@@ -19,9 +18,9 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { href: '/#features', label: 'Features' },
-  { href: '/#teams', label: 'Teams' },
-  { href: '/#pricing', label: 'Pricing' },
+  { href: '/', label: 'Home' },
+  { href: '/features', label: 'Features' },
+  { href: '/about', label: 'About' },
 ];
 
 const Navbar = () => {
@@ -109,12 +108,25 @@ const Navbar = () => {
                     {link.label}
                   </Link>
                 ))}
-                <Button variant="ghost" asChild className="justify-start">
-                  <Link href="/login">Log in</Link>
-                </Button>
-                <Button asChild className="justify-start">
-                  <Link href="/signup">Get Started</Link>
-                </Button>
+                {isSignedIn ? 
+                  <>
+                    <UserButton />
+                    <Button asChild>
+                      <Link href={"/dashboard"}>Dashboard</Link>
+                    </Button>
+                  </>
+                    :
+                    <>
+                      <Button variant="ghost" asChild>
+                        <SignInButton>
+                          Log In
+                        </SignInButton>
+                      </Button>
+                      <Button asChild>
+                        <Link href="/signup">Get Started</Link>
+                      </Button>
+                    </>
+                  }
               </nav>
             </SheetContent>
           </Sheet>

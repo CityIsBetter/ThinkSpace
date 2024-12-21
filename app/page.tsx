@@ -28,7 +28,7 @@ const DotGrid = () => (
     <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent z-10" />
     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
       <pattern id="dot-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-        <circle cx="20" cy="20" r="1" fill="#3e3e3e" opacity="0.8" />
+        <circle cx="20" cy="20" r="1" fill="#3e3e3e" opacity="0.5" />
       </pattern>
       <rect width="100%" height="100%" fill="url(#dot-pattern)" />
     </svg>
@@ -91,7 +91,7 @@ export default function LandingPage() {
         <DotGrid />
         <div className="container mx-auto px-4 text-center relative z-20">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Collaborate on infinite <span className="text-blue-600">whiteboards</span>
+            Real-Time <span className="text-blue-600">Collabrative</span> whiteboards
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             BoardScape brings your team's ideas to life with real-time collaboration tools, infinite canvas space, and powerful features for visual communication.

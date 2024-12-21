@@ -350,6 +350,11 @@ export default function Canvas( { boardId } : CanvasProps ) {
         } 
         case "t": {
           setCanvasState({ mode: CanvasMode.Inserting, layerType: LayerType.Text });
+          break;
+        }
+        case "v": {
+          setCanvasState({ mode: CanvasMode.None });
+          break;
         }
         case "y": {
           if (e.ctrlKey || e.metaKey) {
@@ -383,7 +388,7 @@ export default function Canvas( { boardId } : CanvasProps ) {
   }, [ deleteLayers ,history ]);
 
   return (
-    <main className='h-full w-full relative bg-neutral-100 touch-none'>
+    <main className='h-full w-full relative touch-none z-10'>
         <Info boardId={boardId}/>
         <Participants />
         <Toolbar 
