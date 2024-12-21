@@ -101,7 +101,7 @@ export default function LandingPage() {
               <Link href={"/dashboard"}>Start for Free</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link href={"https://youtube.com/"} target='_blank'>Watch Demo</Link>
+              <Link href={"https://www.youtube.com/watch?v=niHaxpn0CKk"} target='_blank'>Watch Demo</Link>
             </Button>
           </div>
           

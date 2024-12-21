@@ -8,6 +8,7 @@ import {
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Logo attribution links
 const logoAttributions = [
@@ -23,12 +24,27 @@ const logoAttributions = [
   }
 ];
 
+const DotGrid = () => (
+  <div className="absolute inset-0 overflow-hidden">
+    {/* Bottom fade gradient only */}
+    <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-gray-50 to-transparent z-10" />
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <pattern id="dot-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+        <circle cx="20" cy="20" r="1" fill="#3e3e3e" opacity="0.5" />
+      </pattern>
+      <rect width="100%" height="100%" fill="url(#dot-pattern)" />
+    </svg>
+  </div>
+);
+
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="bg-white">
+      <DotGrid />
         <Navbar />
       {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-gradient-to-b from-blue-50 to-white">
+      <section className="pt-24 pb-12 bg-gradient-to-b from-blue-50 to-white h-screen overflow-hidden flex flex-col">
+        <Image src={"/logo2.png"} alt='logo' width={500} height={200} className='self-center'/>
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Our Mission
@@ -39,6 +55,7 @@ export default function AboutPage() {
             anyone, anywhere, at any time.
           </p>
         </div>
+        <Image src={"/empty-search.svg"} width={400} height={800} alt='searching' className='self-center' />
       </section>
 
       {/* Open Source Section */}

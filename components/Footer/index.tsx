@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Github, Twitter, Linkedin } from 'lucide-react';
+import { Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface FooterLink {
@@ -33,9 +33,7 @@ const footerSections: FooterSection[] = [
 ];
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com/CityIsBetter' },
-  { icon: Twitter, href: 'https://twitter.com/CityIsBetter_' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/mahesh-paul' },
+  { icon: Github, href: 'https://github.com/CityIsBetter/BoardScape' },
 ];
 
 const Footer = () => {

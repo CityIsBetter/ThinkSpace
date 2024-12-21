@@ -33,8 +33,15 @@ export default function Navbar() {
                 }
             }}/>
         </div>
-        {organization && <InviteButton />}
-        <UserButton />
+        {/* {organization && <InviteButton />} */}
+        <UserButton appearance={{
+          elements: {
+            userButtonAvatarBox:{
+              width: "40px",
+              height: "40px"
+            }
+          }
+        }} />
     </div>
   )
 }

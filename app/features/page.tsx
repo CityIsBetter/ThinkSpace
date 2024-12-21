@@ -26,26 +26,26 @@ interface FeatureSection {
 const features: FeatureSection[] = [
   {
     title: "Shape Tools",
-    description: "Create perfect shapes with our intuitive tools. Drag to resize, hold shift for perfect proportions, and easily adjust properties like fill, stroke, and opacity.",
+    description: "Create perfect shapes with our intuitive tools. Drag to resize and easily adjust properties like fill color.",
     icon: Square,
-    imageUrl: "/features/shapes-demo.gif",
+    imageUrl: "/features/shapes.gif",
     benefits: [
-      "Perfect rectangles, ellipses, and polygons",
-      "Smart snapping and alignment",
-      "Customizable styles and properties",
-      "Copy and paste with preserved attributes"
+      "Rectangles",
+      "Ellispes",
+      "Customizable colors",
+      "Resizable"
     ]
   },
   {
     title: "Freehand Drawing",
-    description: "Express your ideas naturally with our responsive drawing tools. Multiple brush types, pressure sensitivity, and smoothing controls give you the perfect drawing experience.",
+    description: "Express your ideas naturally with our responsive drawing tools. Momentum sensitivity, and smoothing controls give you the perfect drawing experience.",
     icon: Pencil,
-    imageUrl: "/features/drawing-demo.gif",
+    imageUrl: "/features/pen.gif",
     benefits: [
-      "Pressure-sensitive brushes",
-      "Customizable stroke smoothing",
-      "Multiple brush types and sizes",
-      "Quick color selection and opacity control"
+      "Momentum-sensitive brushes",
+      "Customizable stroke color",
+      "Quick color selection",
+      "Perfect Freehand Library"
     ],
     reverse: true
   },
@@ -53,24 +53,22 @@ const features: FeatureSection[] = [
     title: "Text & Notes",
     description: "Add context to your designs with rich text editing and sticky notes. Format text, create lists, and organize information effectively.",
     icon: Type,
-    imageUrl: "/features/text-demo.gif",
+    imageUrl: "/features/text.gif",
     benefits: [
       "Rich text formatting",
-      "Multiple font styles",
       "Sticky notes and callouts",
-      "Auto-resizing text boxes"
+      "Auto-resizing font size"
     ]
   },
   {
     title: "Layer Management",
-    description: "Keep your work organized with powerful layer controls. Group elements, adjust opacity, and manage complex designs with ease.",
+    description: "Keep your work organized with powerful layer controls. Manage complex overlapping layers with ease.",
     icon: Layers,
-    imageUrl: "/features/layers-demo.gif",
+    imageUrl: "/features/layer.gif",
     benefits: [
-      "Unlimited layers and groups",
-      "Drag and drop reorganization",
-      "Lock and hide layers",
-      "Layer effects and blending modes"
+      "Each object is a layer",
+      "Bring to front",
+      "Send to back"
     ],
     reverse: true
   },
@@ -78,26 +76,13 @@ const features: FeatureSection[] = [
     title: "Team Collaboration",
     description: "Work together in real-time with your team. See cursors, changes, and updates instantly as team members contribute to the board.",
     icon: Users,
-    imageUrl: "/features/collaboration-demo.gif",
+    imageUrl: "/features/realtime.gif",
     benefits: [
       "Real-time cursor presence",
       "Live changes and updates",
       "Team member avatars",
       "Collaborative selection and editing"
     ]
-  },
-  {
-    title: "Real-time Updates",
-    description: "Experience seamless synchronization across all users. Changes are instantly reflected for all team members, ensuring everyone stays in sync.",
-    icon: Zap,
-    imageUrl: "/features/sync-demo.gif",
-    benefits: [
-      "Instant synchronization",
-      "Conflict resolution",
-      "Offline support",
-      "Change history and undo/redo"
-    ],
-    reverse: true
   }
 ];
 
@@ -131,7 +116,7 @@ export default function FeaturesPage() {
         </div>
         <div className="flex items-center justify-between mt-12">
             <Image src={"/features.png"} alt='Features' width={600} height={420} className='relative bottom-0 right-0'/>
-            <Image src={"/features2.png"} alt='Features' width={600} height={420} className='relative bottom-0 right-0'/>
+            <Image src={"/features2.png"} alt='Features' width={600} height={420} className='relative bottom-0 right-0 hidden xl:flex'/>
         </div>
       </section>
 
@@ -163,17 +148,12 @@ export default function FeaturesPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="outline" className="mt-4">
-                    Learn More
-                  </Button>
                 </div>
 
                 {/* Image/Demo Content */}
                 <div className="flex-1">
                   <div className="aspect-video rounded-lg overflow-hidden bg-gray-100 shadow-lg">
-                    {/* Replace with actual image/gif */}
-                    <div className="w-full h-full bg-gradient-to-br from-blue-50 to-purple-50">
-                    </div>
+                    <Image src={feature.imageUrl} alt={feature.title} width={1152} height={648} />
                   </div>
                 </div>
               </div>

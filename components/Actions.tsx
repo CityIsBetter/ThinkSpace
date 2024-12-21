@@ -55,6 +55,9 @@ export function Actions({
     remove({ id: id as Id<"boards"> })
       .then(() => {
         toast.success("Board deleted!");
+        if (window.location.pathname.includes(id)) {
+          window.location.href = "/";
+        }
         setIsOpen(false);
       })
       .catch(() => toast.error("Failed to delete board"));

@@ -71,7 +71,14 @@ const Navbar = () => {
 
             {isSignedIn ? 
             <>
-              <UserButton />
+              <UserButton appearance={{
+                  elements: {
+                    userButtonAvatarBox:{
+                      width: "40px",
+                      height: "40px"
+                    }
+                  }
+                }} />
               <Button asChild>
                 <Link href={"/dashboard"}>Dashboard</Link>
               </Button>
@@ -123,7 +130,7 @@ const Navbar = () => {
                         </SignInButton>
                       </Button>
                       <Button asChild>
-                        <Link href="/signup">Get Started</Link>
+                        <Link href="/dashboard">Get Started</Link>
                       </Button>
                     </>
                   }
