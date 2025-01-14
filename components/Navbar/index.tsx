@@ -91,7 +91,9 @@ const Navbar = () => {
                   </SignInButton>
                 </Button>
                 <Button asChild>
-                  <Link href="/signup">Get Started</Link>
+                  <SignInButton>
+                    Get Started
+                  </SignInButton>
                 </Button>
               </>
             }
